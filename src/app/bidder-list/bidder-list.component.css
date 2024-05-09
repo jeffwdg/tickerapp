@@ -1,28 +1,14 @@
 * {
   box-sizing: border-box;
     font-family: "Trirong", serif;
-}
 
-
-h2, h4, p{
-    font-family: "Trirong", serif;
 }
 
 body{
     font-family: "Trirong", serif;
-    background-image: url('https://photos.zillowstatic.com/fp/54e394386ebd7f2e07881c25e95ff487-cc_ft_1536.webp');
-        background-position: top;
-        background-repeat: no-repeat;
-        background-size: cover;
-}
 
-.propertyImg{
-height:200px;
-}
-
-.propertyimage{
-  width: 100%;
-  min-width: 900px;
+   background-image: url('https://images.pexels.com/photos/1637080/pexels-photo-1637080.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+   background-position: top;
 }
 
 /* Create two equal columns that floats next to each other */
@@ -34,7 +20,6 @@ height:200px;
   background-color: rgba(203, 203, 203, 0.2);
   margin: 10px;
   text-align: center;
-
 }
 
 .column h2, .column p {

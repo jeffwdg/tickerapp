@@ -1,0 +1,25 @@
+<div class="row">
+  <br/>
+  <h1>List of Properties</h1>
+
+  <div class="card-body">
+    <table class="table table-bordered table-striped"  style="width:800px; margin: auto;">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Property ID</th>
+        <th scope="col">Address</th>
+        <th scope="col">Reserve Price</th>
+        <th scope="col">Image</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let property of properties">
+        <td>{{ property.id }}</td>
+        <td>{{ property.street }}, {{ property.address }}</td>
+        <td>{{ property.reservePrice }}</td>
+        <td><a href="/ticker/{{ property.id }}/1"><img style="height:200px;" class="propertyImg" src="{{ property.image }}" /></a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

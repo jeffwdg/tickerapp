@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+
+  <h2 class="text-center">List of Bidders</h2>
+  <table class="table table-stripped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+  <tr *ngFor="let bidder of bidders">
+
+      <td> {{ bidder.id }} </td>
+      <td> {{ bidder.username }} </td>
+      <td>    <a href="/bidder/{{ bidder.id }}">View     </a></td>
+
+    </tr>
+    </tbody>
+  </table>
+
+  </div>
+</div>

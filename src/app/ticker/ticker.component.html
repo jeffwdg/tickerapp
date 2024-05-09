@@ -1,0 +1,96 @@
+<div [style.background-image]="'url(' + property.image + ')'" >
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd" >
+  <div class="rows" style="display:flex;">
+    <div class="tickerblock" >
+      <a href="/bidders"><img src="/../assets/document.png" alt="Location"></a>
+    </div>
+
+    <div class="tickerblock">
+      <p>Own</p>
+      <h4>{{ property.street }}</h4>
+      <p>{{ property.address }}</p>
+    </div>
+
+    <div class="tickerblock" >
+      <a href="/properties"><img src="/../assets/placeholder.png" alt="Location"></a>
+    </div>
+
+    <div class="tickerblock" >
+      <p>To</p>
+      <h4>Start</h4>
+      <p>Place Deposit</p>
+    </div>
+
+    <div class="tickerblock" >
+      <img src="/../assets/bookmark.png" alt="Location">
+    </div>
+
+    <div class="tickerblock" >
+      <p>Market value {{ property.marketValue}}</p>
+      <h4>{{ property.reservePrice}}</h4>
+      <p>Reserve Price</p>
+    </div>
+
+    <div class="tickerblock" >
+      <a href="/"><img src="/../assets/home.png" alt="Location"></a>
+    </div>
+
+  </div>
+
+</nav>
+
+
+<div class="rows" style="display:flex;">
+    <div class="tickercolumn"  ng-if="pBids">
+      <h4>Outbid</h4>
+      <p style="color:red;">{{ pBids[2] }}</p>
+    </div>
+
+    <div class="tickercolumn" >
+      <h4>Active</h4>
+      <p style="color:gray;">{{ pBids[1] }}</p>
+    </div>
+
+    <div class="tickercolumn" >
+      <h4>Winning</h4>
+      <p style="color:green;">{{ pBids[0] }}</p>
+    </div>
+
+
+  <div class="tickercolumncenter"  *ngFor="let propertz of properties">
+    <div   *ngFor="let mbid of mybid">
+    <a href="/ticker/{{ propertz.id }}/1">
+      <h4>{{ propertz.street }}</h4>
+      <p><span style="color:lightgreen;" *ngIf="mbid.propertyId === propertz.id"> {{ mbid.bidAmount}}  </span>  {{ propertz.reservePrice }}</p>
+    </a>
+    </div>
+  </div>
+
+
+  <div class="tickercolumn" >
+    <h4>Winning</h4>
+    <p style="color:green;">{{ pBids[0] }}</p>
+  </div>
+
+  <div class="tickercolumn" >
+    <h4>Active</h4>
+    <p style="color:gray;">{{ pBids[1] }}</p>
+  </div>
+
+  <div class="tickercolumn" >
+    <h4>Outbid</h4>
+    <p style="color:red;">{{ pBids[2] }}</p>
+  </div>
+
+</div>
+<div class="rows propertyimage" style="display:flex; height:900px;">
+  <div class="rows auctionsign" style="position:absolute;" ng-if="property">
+    <p>Market Value {{ property.marketValue }}</p>
+    <p>{{ property.street }}</p>
+    <span>{{property.address}}</span>
+    <p></p>
+    <span>Reserve bid {{ property.reservePrice }}</span>
+  </div>
+ <img src="{{ property.image}}" atl="Property image">
+</div>
+</div>
